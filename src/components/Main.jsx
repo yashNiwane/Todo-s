@@ -6,7 +6,7 @@ function Main() {
   const [newNote, setNewNote] = useState("");
 
   const addTask = (e) => {
-    // console.log(e.target.parentElement.firstElementChild.value);
+    
     if (e.target.parentElement.firstElementChild.value === "") {
       alert("Please enter the NOTE");
     } else {
@@ -22,7 +22,6 @@ function Main() {
   };
 
   const clearComplated = () => {
-    // console.log(list[0].note);
     if (list[0].note === "") {
       alert("hepsi silindi");
     } else {
@@ -39,6 +38,7 @@ function Main() {
             type="text"
             name="text"
             id="input-text"
+            placeholder="Add Your Todo's Hear"
             required
             onChange={(e) => setNewNote(e.target.value)}
             value={newNote}
@@ -54,13 +54,13 @@ function Main() {
       <section className="list-container">
         <nav className="card">
           <nav className="card-header">
-            <span className="notes">NOTES</span> {/* <span id="calendar"></span> */}
+            <span className="notes">Todos</span> 
             <button
               id="deleteAll"
               className="deleteAll"
               onClick={clearComplated}
             >
-              DELETE<i className="fas fa-trash-alt"></i>
+              clear<i className="fas fa-trash-alt"></i>
             </button>
           </nav>
           <nav className="card-body">
